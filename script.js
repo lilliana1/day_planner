@@ -12,3 +12,5 @@ var todoTwo = document.querySelector("todo-2");
 var todoThree = document.querySelector("todo-3");
 var todoFour = document.querySelector("todo-4");
 var todoFive = document.querySelector("todo-5");
+
+var nine = [];
