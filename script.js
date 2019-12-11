@@ -2,25 +2,63 @@
 $("#currentDay").text(moment().format('MMMM Do YYYY'));
 
 //
-var saveBtn = document.querySelector(".saveBtn");
-var nine = document.querySelector("#9");
-var ten = document.querySelector("#10");
-var eleven = document.querySelector("#11");
-var twelve = document.querySelector("#12");
-var one = document.querySelector("#1");
-var two = document.querySelector("#2");
-var three = document.querySelector("#3");
-var four = document.querySelector("#4");
-var five = document.querySelector("#5");
+// var saveBtn = document.querySelector(".saveBtn");
+// var nine = document.querySelector("#9");
+// var ten = document.querySelector("#10");
+// var eleven = document.querySelector("#11");
+// var twelve = document.querySelector("#12");
+// var one = document.querySelector("#1");
+// var two = document.querySelector("#2");
+// var three = document.querySelector("#3");
+// var four = document.querySelector("#4");
+// var five = document.querySelector("#5");
 
 
-// Store data when save button is click on 
-$(".saveBtn").on("click", function(){
-    var info = $('#9').val
-    localStorage.setItem("nine",JSON.stringify("9"))
-    // Get data
-    localStorage.getItem('nine');
-})
+window.onbeforeunload = function() {
+    localStorage.setItem("toDo9", $('#9').val());
+    localStorage.setItem("toDo10", $('#10').val());
+    localStorage.setItem("toDo11", $('#11').val());
+    localStorage.setItem("toDo12", $('#12').val());
+    localStorage.setItem("toDo1", $('#1').val());
+    localStorage.setItem("toD2", $('#2').val());
+    localStorage.setItem("toDo3", $('#3').val());
+    localStorage.setItem("toDo4", $('#4').val());
+    localStorage.setItem("toDo5", $('#5').val());
+};
+
+window.onload = function() {
+    var str = localStorage.getItem("toDo9");
+    if (str !== null) $('#9').val(str);
+    var str = localStorage.getItem("toDo10");
+    if (str !== null) $('#10').val(str);
+    var str = localStorage.getItem("toDo11");
+    if (str !== null) $('#11').val(str);
+    var str = localStorage.getItem("toDo12");
+    if (str !== null) $('#12').val(str);
+    var str = localStorage.getItem("toDo1");
+    if (str !== null) $('#1').val(str);
+    var str = localStorage.getItem("toDo2");
+    if (str !== null) $('#2').val(str);
+    var str = localStorage.getItem("toDo3");
+    if (str !== null) $('#3').val(str);
+    var str = localStorage.getItem("toDo4");
+    if (str !== null) $('#4').val(str);
+    var str = localStorage.getItem("toDo5");
+    if (str !== null) $('#5').val(str);
+
+};
+
+
+
+// var todo9 = localStorage.getItem(9);
+// // Store data when save button is click on 
+// $(".saveBtn").on("click", function(){
+//     localStorage.setItem("#9", input.val());
+//     // Get data
+//     localStorage.getItem(9);
+//     localStorage.setItem("nine",JSON.stringify("9"))
+    
+// })
 
 // Display the items from local storage 
 
