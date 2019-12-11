@@ -59,6 +59,35 @@ $(".saveBtn").on("click", function(event) {
 });
    
 
+// highlights color
+$(".saveBtn").each(function(i,data){
+      console.log(i);
+      console.log($(this).val());
+      console.log(moment().hour());
+
+      let exactHour = moment().hour();
+      let valueHour = parseInt($(this).val());
+
+      console.log(exactHour);
+      console.log(valueHour);
+
+      if (valueHour < exactHour) {
+        $(".time" + i).addClass("past");
+      } 
+      else if (valueHour > exactHour) {
+        $(".time" + i).addClass("future")
+      } else {
+        $(".time" + i).addClass("present")
+      }
+      
+
+
+
+
+
+
+})
+
 
 // var todo9 = localStorage.getItem(9);
 // // Store data when save button is click on 
