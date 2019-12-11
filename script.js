@@ -5,7 +5,7 @@ function minutes() {
 setInterval(minutes,1000);
 
 //
-// var saveBtn = document.querySelector(".saveBtn");
+var saveBtn = document.querySelector(".saveBtn");
 // var nine = document.querySelector("#9");
 // var ten = document.querySelector("#10");
 // var eleven = document.querySelector("#11");
@@ -16,8 +16,34 @@ setInterval(minutes,1000);
 // var four = document.querySelector("#4");
 // var five = document.querySelector("#5");
 
+// get local storage when page is refreshed with function
+refresh();
+function refresh() {
+  var str = localStorage.getItem("toDo9");
+  if (str !== null) $('#9').val(str);
+  var str = localStorage.getItem("toDo10");
+  if (str !== null) $('#10').val(str);
+  var str = localStorage.getItem("toDo11");
+  if (str !== null) $('#11').val(str);
+  var str = localStorage.getItem("toDo12");
+  if (str !== null) $('#12').val(str);
+  var str = localStorage.getItem("toDo1");
+  if (str !== null) $('#1').val(str);
+  var str = localStorage.getItem("toDo2");
+  if (str !== null) $('#2').val(str);
+  var str = localStorage.getItem("toDo3");
+  if (str !== null) $('#3').val(str);
+  var str = localStorage.getItem("toDo4");
+  if (str !== null) $('#4').val(str);
+  var str = localStorage.getItem("toDo5");
+  if (str !== null) $('#5').val(str);
+}
 
-window.onbeforeunload = function() {
+// if they click save 
+
+$(".saveBtn").on("click", function(event) {
+ 
+    event.preventDefault();
     localStorage.setItem("toDo9", $('#9').val());
     localStorage.setItem("toDo10", $('#10').val());
     localStorage.setItem("toDo11", $('#11').val());
@@ -27,30 +53,11 @@ window.onbeforeunload = function() {
     localStorage.setItem("toDo3", $('#3').val());
     localStorage.setItem("toDo4", $('#4').val());
     localStorage.setItem("toDo5", $('#5').val());
-};
 
-window.onload = function() {
-    var str = localStorage.getItem("toDo9");
-    if (str !== null) $('#9').val(str);
-    var str = localStorage.getItem("toDo10");
-    if (str !== null) $('#10').val(str);
-    var str = localStorage.getItem("toDo11");
-    if (str !== null) $('#11').val(str);
-    var str = localStorage.getItem("toDo12");
-    if (str !== null) $('#12').val(str);
-    var str = localStorage.getItem("toDo1");
-    if (str !== null) $('#1').val(str);
-    var str = localStorage.getItem("toDo2");
-    if (str !== null) $('#2').val(str);
-    var str = localStorage.getItem("toDo3");
-    if (str !== null) $('#3').val(str);
-    var str = localStorage.getItem("toDo4");
-    if (str !== null) $('#4').val(str);
-    var str = localStorage.getItem("toDo5");
-    if (str !== null) $('#5').val(str);
+    refresh();
 
-};
-
+});
+   
 
 
 // var todo9 = localStorage.getItem(9);
