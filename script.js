@@ -1,4 +1,4 @@
-//current date displays
+//current date & time displays
 function minutes() {
   $("#currentDay").text(moment().format('MMMM Do YYYY, h:mm:ss a'));  
 }
@@ -79,13 +79,6 @@ $(".saveBtn").each(function(i,data){
       } else {
         $(".time" + i).addClass("present")
       }
-      
-
-
-
-
-
-
 })
 
 
