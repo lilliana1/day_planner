@@ -1,5 +1,8 @@
 //current date displays
-$("#currentDay").text(moment().format('MMMM Do YYYY'));
+function minutes() {
+  $("#currentDay").text(moment().format('MMMM Do YYYY, h:mm:ss a'));  
+}
+setInterval(minutes,1000);
 
 //
 // var saveBtn = document.querySelector(".saveBtn");
